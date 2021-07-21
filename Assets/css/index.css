@@ -1,0 +1,44 @@
+* {
+    margin: 5px;
+}
+.box1 {
+    margin-top: 10px;
+    width:auto;
+    height:100%;
+    background-color: #7380C4; 
+    background-size: cover;
+    padding: 7px;
+}
+
+.nav-link {
+    color: red;
+}
+
+.tab2 {
+    text-decoration: none;
+    color: gray;
+}
+
+.hd1 {
+    margin-top: 7px;
+    color: #DC9965;
+}
+
+.bd {
+    border-color: #7380C4;
+}
+
+.btn {
+    background-color: #7380C4;
+}
+
+.col-form-label {
+    color: #7380C4;
+}
+
+.dropd {
+    width: 41%;
+    height: 40px;
+    border: 1px solid #CED4DA;
+    background-color: white;
+}

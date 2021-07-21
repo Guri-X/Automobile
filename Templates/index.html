@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}"/>
+    <title>Automobile Details</title>
+</head>
+
+<body>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active tab1 fw-bold" aria-current="page" href="#">General</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link tab2 fw-bold" href="#">Attachment</a>
+        </li>
+    </ul>
+
+    <div class="box1">&nbsp</div>
+    <div class="bd border-bottom border-4">
+        <h5 class="fw-bold hd1">Vehicle Details</h5>
+    </div>
+
+    <div class="v_form">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Sap Code</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" value="{{v_form.sap_value.value}}" placeholder="Enter SAP Code" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Ledger Name</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" value="{{v_form.ledger_name.value}}" placeholder="Enter Ledger Name" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Manufacturer</label>
+                <div class="col-sm-7">
+                    <select class="dropd custom-select custom-select-lg">
+                        {% for field in v_form.manufacturer %}               
+                        <option value="#">{{field}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Model No.</label>
+                <div class="col-sm-7">
+                    <select class="dropd custom-select custom-select-lg">
+                        {% for field in v_form.mno %}               
+                        <option value="">{{field}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Vehicle Type<sup style="color:red;">*</sup></label>
+                <div class="col-sm-7">
+                    <select class="dropd custom-select custom-select-lg">
+                        {% for field in v_form.vehicle_type %}               
+                        <option value="">{{field}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Base Km<sup style="color:red;">*</sup></label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" value="{{v_form.base_km.value}}"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">RTO</label>
+                <div class="col-sm-7">
+                    <select class="dropd custom-select custom-select-lg">
+                        {% for field in v_form.rto %}               
+                        <option value="">{{field}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div><br>
+
+    <div class="bd border-bottom border-4">
+        <h5 class="fw-bold hd1">Engine Details</h5>
+    </div>
+
+    <div class="e_form">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Model Year</label>
+                <div class="col-sm-7">
+                    <select class="dropd custom-select custom-select-lg">
+                        {% for field in e_form.model_year %}               
+                        <option value="">{{field}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>            
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Chassis No.</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" value="{{e_form.chassis_no.value}}" placeholder="Enter Chassis No." />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Fuel Type</label>
+                <div class="col-sm-7">
+                    <select class="dropd custom-select custom-select-lg">
+                        {% for field in e_form.fuel_type %}               
+                        <option value="">{{field}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Old Vehicle No.</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" value="{{e_form.old_vehicle_no.value}}" placeholder="Enter Old Vehicle No." />
+                </div>
+            </div><br><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
